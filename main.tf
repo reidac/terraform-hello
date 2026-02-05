@@ -1,3 +1,10 @@
+
+resource "null_resource" "check_env" {
+  provisioner "local-exec" {
+    command =  "env | grep AWS"
+  }
+}
+
 terraform {
   required_providers {
     aws = {
