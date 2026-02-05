@@ -1,17 +1,4 @@
 
-
-resource "null_resource" "check_env" {
-  provisioner "local-exec" {
-    command = "echo debug"
-  }
-}
-
-resource "null_resource" "check_env" {
-  provisioner "local-exec" {
-    command =  "env | grep AWS"
-  }
-}
-
 terraform {
   required_providers {
     aws = {
@@ -27,9 +14,6 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
-  skip_metadata_api_check = true
-  skip_credentials_validation = true
-  skip_requesting_account_id = true
 }
 
 provider "cloudflare" {
