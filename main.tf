@@ -1,4 +1,11 @@
 
+
+resource "null_resource" "check_env" {
+  provisioner "local-exec" {
+    command = "echo debug"
+  }
+}
+
 resource "null_resource" "check_env" {
   provisioner "local-exec" {
     command =  "env | grep AWS"
