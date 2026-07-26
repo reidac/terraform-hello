@@ -37,4 +37,5 @@ resource "cloudflare_dns_record" "hello" {
   content = aws_instance.hello.public_ip
   ttl = 3600 
   type = "A"
+  proxied = false
 }
